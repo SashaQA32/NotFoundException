@@ -3,8 +3,7 @@ package ru.netology;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.netology.domain.Book;
-import ru.netology.domain.NotFoundException;
-import ru.netology.domain.Product;
+import ru.netology.domain.Notfoundexcep;
 import ru.netology.domain.Smartphone;
 import ru.netology.manager.ProductManager;
 import ru.netology.repository.ProductRepository;
@@ -42,7 +41,7 @@ class ProductManagerTest {
 
     @Test
     void shouldNoDeleteNoProductFound() {
-        assertThrows(NotFoundException.class, () -> {
+        assertThrows(Notfoundexcep.class, () -> {
             manager.removeById(-1);
         });
     }

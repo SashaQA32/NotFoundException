@@ -1,7 +1,7 @@
 package ru.netology.manager;
 
 import ru.netology.domain.Book;
-import ru.netology.domain.NotFoundException;
+import ru.netology.domain.Notfoundexcep;
 import ru.netology.domain.Product;
 import ru.netology.domain.Smartphone;
 import ru.netology.repository.ProductRepository;
@@ -59,7 +59,7 @@ public class ProductManager {
 
     public void removeById(int id) {
         if (repository.findById(id) == null) {
-            throw new NotFoundException("Element with id: " + id + " not found");
+            throw new Notfoundexcep("Element with id: " + id + " not found");
         } else {
             repository.removeById(id);
         }
